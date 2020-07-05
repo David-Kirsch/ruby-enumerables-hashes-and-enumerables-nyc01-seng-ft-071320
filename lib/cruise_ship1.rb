@@ -1,4 +1,3 @@
-require 'pry'
 # passengers = {
 # suite_a: "Amanda Presley", 
 # suite_b: "Seymour Hoffman", 
@@ -9,9 +8,11 @@ require 'pry'
 
 def select_winner(passengers)
   # add the code snippet here!
-  passengers.each do |key, value|
-    if(passengers[:suite_a][0] == "A")
-      return value
-    end
+  winner = " "
+  passengers.each do |suite, name|
+    if(suite == :suite_a && name.start_with?("A"))
+      winner = name 
+    end 
   end
+  winner
 end
